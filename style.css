@@ -1,0 +1,393 @@
+/*
+Theme Name: R1
+Theme URI: https://www.trevormearns.com
+Author: Trevor Mearns
+Description: A basic theme using the Bootstrap framework.
+Version: 1.0
+Text Domain: r1
+*/
+html {
+    overflow: hidden;
+    /* height: 100%; I commented out this declaration because it messes up your scrolling */
+    }
+    
+    body {
+        margin-top: 0px;
+        overflow-x: hidden !important;
+        margin-left: 0px;
+        margin-right: 0px;
+        height: 100%;
+    }
+    .custom-header {
+      margin-bottom: 0 !important;
+    }
+    /*top bar of site*/
+    .main-nav{
+        height: 4em;
+        background-color: black;
+        width: 100%;
+        margin-top: 0px;<?php /*company info page template*/ ?>
+    
+    <?php get_header(); ?>
+    
+        <div id="desktop-jumbotron" class="jumbotron jumbotron-fluid .d-sm-flex">
+          <div  class="container" id="title-container">
+            <div class="title-container">
+                <div class="row justify-content-center" id="site-title-wrapper">
+                <h1 class="main-title">Southern Pharmacy</h1>
+                </div>
+                <div class="row justify-content-center">
+                    <span id="sub-title">
+                        サザン薬局グループ
+                    </span>
+                </div>
+           </div>
+        </div>
+      </div>
+    <div class="row justify-content-center">
+        <nav class="secondary-nav">
+            <ul>
+                <li>
+                <?php wp_nav_menu(array(
+                    'theme_location' => 'custom menu',
+                    'menu_class'     => 'custom-menu')) ?>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    
+    
+    <?php 
+     if ( have_posts() ) { 
+     while ( have_posts() ) : the_post();
+     ?>
+     <div class="home-page-content">
+    
+     <?php the_content(); ?>
+     </div><!-- /.blog-post -->
+     <?php
+     endwhile;
+     } 
+     ?>
+      
+    
+    
+    
+    <?php get_footer(); ?>
+    }
+    
+    /*css rendering for hamburger menu body*/
+    .navbar-toggler{
+        width: 47px;
+        height: 34px;
+        background-color: black;
+        border: solid;
+        border-width: 1px;
+        border-color: white;
+        margin-bottom: .5em;
+    }
+
+    .navbar{
+        height: 4em;
+        background-color: black;
+        width: 100%;
+        padding-top: 2em;
+        height:60px;
+        z-index:170;
+        margin:0 auto;
+        border-bottom:1px solid #dadada;
+        width:100%;
+        position:fixed;
+        top:0;
+        left:0;
+        right:0;
+        text-align: center;
+    }
+    
+    /*css rendering for hamburger menu lines*/
+    .navbar-toggler .line{
+        width: 100%;
+        float: left;
+        height: 2px;
+        background-color: #fff;
+        margin-bottom: 5px;
+    }
+    .main-menu{
+        background-color: #d3d3d3;
+        padding: .5em 2.5em;
+        text-align: center;
+        width: 100%;
+    }
+     .main-menu li  {
+        display: inline;
+         text-decoration: none;
+        color: black;
+        padding: 3em 3.5em;
+        font-size: 1em;
+         
+    }
+    .main-menu ul li a {
+        color: #171717;
+    }
+    .secondary-nav ul {
+            padding-left: 0px;
+         list-style: none;
+        margin-bottom: 0px;
+    }
+    
+    
+    .boxed-title-paragraph {
+        margin-bottom: 0px;
+    }
+    
+    table.greyGridTable {
+      border: 1px solid #aaaaaa;
+      width: 100%;
+      text-align: left;
+      border-collapse: collapse;
+    }
+    table.greyGridTable td, table.greyGridTable th {
+      border: 1px solid #aaaaaa;
+      padding: 3px 4px;
+    }
+    table.greyGridTable tbody td {
+      font-size: 13px;
+    　padding: .6em .4em;
+    }
+    table.greyGridTable td:nth-child(odd) {
+      background: #ded5bb;
+      width: 25%;
+    }
+    table.greyGridTable tfoot td {
+      font-size: 14px;
+    }
+    /*horizontal alignment of nav items*/
+    #navbarTogglerDemo02 {
+        padding-left: 18%;
+    }
+    
+      
+      /*top level header title*/
+    #site-title-wrapper{
+    
+        margin-top: 6em;
+    }
+    .main-title{
+        color: #217503;
+        font-family: Meiryo;
+        font-weight: 400;
+        font-size: 2em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+        text-shadow: 2px 2px #fff;
+    }
+    
+    /*header sub-title*/
+    #sub-title{
+        color: #217503;
+        font-family: Meiryo;
+        font-weight: 100;
+        font-size: 1.5em;
+        padding-left: .5em;
+        margin-top: -1em;
+        padding-bottom: .5em;
+        
+    }
+    #header-container{
+        margin-bottom: 5em;
+    }
+    .navbar-text a {
+        color: white;
+        padding-right: 2em;
+    }
+    
+    /*cta buttons on jumbotron*/
+    .jumbotron-button{
+        margin: 3em 1em;
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    .button-div{
+        margin-bottom: -10px;
+    }
+    
+    
+    
+    #title-container{
+        background-color: white;
+        opacity: 0.4;
+        width: 30%;
+        border-radius: 4px;
+    }
+    #desktop-jumbotron{
+        background-image: url('img/spring-276014_1920.jpg');
+        background-size: cover;
+        padding-top: 4em;
+        padding-bottom: 10em;
+        margin-top: 0px;
+        margin-bottom: 1px;
+    
+    }
+    
+    home-page-intro-mobile{
+        display: none;
+    }
+    
+    .home-section-title{
+        margin-left: -30px;
+        padding-bottom: 0px;
+    }
+    .home-section-title-columns{
+        margin-bottom: 0px;
+    }
+    .sub-header{
+        background-color: black;
+        max-height: 3em;
+        text-align: center;
+        color: white;
+    }
+    
+    .step {
+        float: left;
+        background-color: #01af50;
+        border-radius: 8px;
+        margin-bottom: 0px;
+    }
+    
+    .step-text{
+        color: white;
+        padding-top: .5em;
+        padding-bottom: 0px;
+        padding-left: .8em;
+        padding-right: .8em;
+        margin-bottom: 7px;
+        font-weight: 600;
+        
+    }
+    
+    .footer{
+        height: 4em;
+        background-color: black;
+        text-align: center;
+        padding-top: 1em;
+        
+        
+    }
+    
+    .footer p {
+        color: white;
+        margin: 0 2em;
+    }
+    
+    .footer p a {
+        color: white;
+    }
+    
+    /*------------------------------------------
+      Responsive Grid Media Queries - 1280, 1024, 768, 480
+       1280-1024   - desktop (default grid)
+       1024-768    - tablet landscape
+       768-480     - tablet 
+       480-less    - phone landscape & smaller
+    --------------------------------------------*/
+    @media only screen and (min-width: 1024px) and (max-width: 1280px) { 
+        #mobile-jumbotron {
+            display: none;
+        }
+    }
+    
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+       #mobile-jumbotron {
+            display: none;
+        }
+        
+    }
+    
+    @media only screen and (min-width: 480px) and (max-width: 768px) {
+         #mobile-jumbotron {
+            display: none;
+        }
+        
+    }
+    
+    @media only screen and (max-width: 480px) {
+        nav a.navbar-brand {
+            margin-left: .5em;
+            padding-bottom: .2em;
+            padding-top: .2em;
+        }
+        #header-container{
+            text-align: center;
+        }
+        .main-title{
+            font-size: 30px;
+        }
+        .sub-title{
+            font-size: 18px;
+        }
+        .secondary-nav{
+            width: 100%;
+        }
+        .custom-menu ul li {
+            font-size: 11px;
+            padding: 3em .3em;
+        }
+       #title-container{
+        background-color: white;
+        opacity: 0.6;
+        width: 100%;
+        border-radius: 4px;
+    }
+        .home-page-intro{
+            display: none;
+        }
+        .staff-profile-pic{
+            align-content: center;
+        }
+        .staff-title-separator{
+            margin-top: 2px;
+        }
+        .page-title{
+            font-size: 27px;
+            font-weight: 700;
+        }
+        .sub-header{
+            font-size: 20px;
+        }
+        .ac_title_class{
+            margin-left: 5%;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .contents-title{
+            font-size: 13px;
+            padding-top: 4px;
+        }
+        .sub-title{
+            font-size: 16px;
+            font-weight: 500;
+        }
+        #sub-title-wrapper{
+            padding-top: 2px;
+        }
+        .course-intro-text{
+        font-size: 1em;
+        line-height: 1.2;
+    }
+        .icon-list{
+        padding-left: 8%;
+        font-size: 14px;
+    }
+    
+    .contact-form-wrapper{
+        padding-left: 16px;
+    }
+    
+    }
+    
+    
+    
+    
+    
